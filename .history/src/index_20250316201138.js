@@ -50,13 +50,13 @@ document.addEventListener("DOMContentLoaded", () => {
         taskItem.style.color = "black";//colors without priority are given black
     }
   }
-  //this function adds the delete functionality to each task
+  //this function adds 
   function addDeleteHandler(taskItem) {
     taskItem.querySelector(".delete-btn").addEventListener("click", () => {
       taskItem.remove();
     });
   }
-  //tis function adds the edit functionality to each task
+
   function addEditHandler(taskItem) {
     taskItem.querySelector(".edit-btn").addEventListener("click", () => {
       const updatedDescription = prompt("Edit task:", taskItem.querySelector("strong").textContent);

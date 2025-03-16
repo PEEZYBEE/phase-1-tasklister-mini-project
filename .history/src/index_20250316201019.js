@@ -44,19 +44,19 @@ document.addEventListener("DOMContentLoaded", () => {
         taskItem.style.color = "orange";//medium priority is given orange
         break;
       case "low":
-        taskItem.style.color = "green";//low priority item is given green
+        taskItem.style.color = "green";low priority 
         break;
       default:
-        taskItem.style.color = "black";//colors without priority are given black
+        taskItem.style.color = "black";
     }
   }
-  //this function adds the delete functionality to each task
+
   function addDeleteHandler(taskItem) {
     taskItem.querySelector(".delete-btn").addEventListener("click", () => {
       taskItem.remove();
     });
   }
-  //tis function adds the edit functionality to each task
+
   function addEditHandler(taskItem) {
     taskItem.querySelector(".edit-btn").addEventListener("click", () => {
       const updatedDescription = prompt("Edit task:", taskItem.querySelector("strong").textContent);

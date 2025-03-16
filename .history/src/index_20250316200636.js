@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const taskForm = document.querySelector("#create-task-form");
-  const taskListContainer = document.querySelector("#tasks");//select element where tasks will be displayed
+  const taskListContainer = document.querySelector("#tasks");//select 
 
   taskForm.addEventListener("submit", function (event) {
     event.preventDefault(); //prevent page from refreshing when for is submitted
@@ -21,42 +21,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function createTaskItem(description, user, due, priority) {
     const taskItem = document.createElement("li");
-    //add the task description ,user,due date and buttons to the task item
     taskItem.innerHTML = `<strong>${description}</strong> (Assigned to: ${user}, Due: ${due}) 
                           <button class="delete-btn">Delete</button> 
                           <button class="edit-btn">edit</button>`;
 
     applyPriorityStyle(taskItem, priority);
     taskItem.dataset.priority = priority;
-    //adds functionality to the delete and edit butons respectively
+
     addDeleteHandler(taskItem);
     addEditHandler(taskItem);
 
-    return taskItem;// returns the new task item
+    return taskItem;
   }
 
   function applyPriorityStyle(taskItem, priority) {
     switch (priority) {
       case "high":
-        taskItem.style.color = "red";//high priority is give red
+        taskItem.style.color = "red";
         break;
       case "medium":
-        taskItem.style.color = "orange";//medium priority is given orange
+        taskItem.style.color = "orange";
         break;
       case "low":
-        taskItem.style.color = "green";//low priority item is given green
+        taskItem.style.color = "green";
         break;
       default:
-        taskItem.style.color = "black";//colors without priority are given black
+        taskItem.style.color = "black";
     }
   }
-  //this function adds the delete functionality to each task
+
   function addDeleteHandler(taskItem) {
     taskItem.querySelector(".delete-btn").addEventListener("click", () => {
       taskItem.remove();
     });
   }
-  //tis function adds the edit functionality to each task
+
   function addEditHandler(taskItem) {
     taskItem.querySelector(".edit-btn").addEventListener("click", () => {
       const updatedDescription = prompt("Edit task:", taskItem.querySelector("strong").textContent);

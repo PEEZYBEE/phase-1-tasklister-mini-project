@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task Lister</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="main-content">
+    <h1>Task Lister Lite™️</h1>
+
+    <form id="create-task-form" action="" method="POST">
+      <label for="new-task-description">Task description:</label>
+      <input type="text" id="new-task-description" placeholder="Task description">
+      
+      <label for="task-user">Assigned User:</label>
+      <input type="text" id="task-user" placeholder="Assigned User">
+      
+      <label for="task-due-date">Due Date:</label>
+      <input type="date" id="task-due-date">
+      
+      <label for="task-priority">Priority:</label>
+      <select id="task-priority">
+        <option value="high">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+      </select>
+
+      <input type="submit" value="Create New Task">
+    </form>
+
+    <div id="list">
+      <h2>My Todos:</h2>
+      <ul id="tasks">
+      </ul>
+    </div>
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+</html>
