@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
       taskItem.remove();
     });
   }
-  //thi function adds the edit functionality to each task
+  //t function adds the edit functionality to each task
   function addEditHandler(taskItem) {
     taskItem.querySelector(".edit-btn").addEventListener("click", () => {
       const updatedDescription = prompt("Edit task:", taskItem.querySelector("strong").textContent);
